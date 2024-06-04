@@ -124,13 +124,13 @@ class MemberProfileField extends DataObject
         ));
 
         $fields->insertBefore(
+            'ProfileVisibility',
             new HeaderField('VisibilityHeader', _t('MemberProfiles.VISIBILITY', 'Visibility')),
-            'ProfileVisibility'
         );
 
         $fields->insertBefore(
+            'CustomError',
             new HeaderField('ValidationHeader', _t('MemberProfiles.VALIDATION', 'Validation')),
-            'CustomError'
         );
 
         if ($memberField instanceof DropdownField) {

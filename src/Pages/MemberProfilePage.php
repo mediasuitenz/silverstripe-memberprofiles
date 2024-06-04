@@ -182,6 +182,7 @@ class MemberProfilePage extends Page
     {
         if (!$action
             && Security::getCurrentUser()
+            && Security::getCurrentUser()->ID
             && !$this->AllowProfileEditing
             && $this->CanAddMembers()
         ) {
@@ -269,7 +270,7 @@ class MemberProfilePage extends Page
                         'in the "Settings" tab.'
                     )
                 ));
-                $fields->insertBefore($disabledNote, 'Sections');
+                $fields->insertBefore('Sections', $disabledNote);
             }
 
             $groups->setDescription(_t(
